@@ -1,0 +1,315 @@
+    1  curl -sL https://deb.nodesource.com/setup_16.x | sudo -E bash -
+    2  node-red
+    3  reboot
+    4  sudo reboot
+    5  node-red
+    6  sudo apt-get update
+    7  sudo apt-get install mosquitto mosquitto-clients
+    8  sudo apt-add-repository ppa:mosquitto-dev/mosquitto-ppa
+    9  sudo apt-get update
+   10  sudo apt-get install mosquitto
+   11  sudo apt-get install mosquitto-clients
+   12  sudo apt install awscli
+   13  nodered
+   14  node-red
+   15  mosquitto -v
+   16  sudo nano /etc/mosquitto/mosquitto.conf
+   17  sudo systemctl restart mosquitto
+   18  cd /etc/mosquitto
+   19  sudo systemctl restart mosquitto
+   20  sudo systemctl status mosquitto.service
+   21  ls
+   22  nano conf.d
+   23  sudo systemctl status mosquitto.service
+   24  reboot
+   25  sudo systemctl restart mosquitto
+   26  journalctl -xeu mosquitto.service
+   27  sudo apt-add-repository ppa:mosquitto-dev/mosquitto-ppa
+   28  sudo apt-get update
+   29  sudo apt-get install mosquitto
+   30  sudo apt-get install mosquitto-clients
+   31  sudo apt install awscli
+   32  aws configure
+   33  aws iot create-policy --policy-name bridgeMQTT --policy-document '{"Version": "2012-10-17",sdasdadasdas"Statement": [{"Effect": "Allow","Action": "iot:*","Resource": "*"}]}'
+   34  aws iot create-policy --policy-name bridgeMQTT --policy-document '{"Version": "2023-08-01","Statement": [{"Effect": "Allow","Action": "iot:*","Resource": "*"}]}'
+   35  aws iot create-policy --policy-name bridgeMQTT --policy-document '{"Version": "2012-10-17","Statement": [{"Effect": "Allow","Action": "iot:*","Resource": "*"}]}'
+   36  cd /etc/mosquitto/certs/
+   37  sudo wget https://www.amazontrust.com/repository/AmazonRootCA1.pem -O rootCA.pem
+   38  sudo aws iot create-keys-and-certificate --set-as-active --certificate-pem-outfile cert.crt --private-key-outfile private.key --public-key-outfile public.key --region us-east-1
+   39  {     "certificateArn": "arn:aws:iot:us-east-1:336607929163:cert/e7cb1b0a925eba754c26292f8fdad0d27062e7b050e695a9c62f1342c0a223a7",;     "certificateId": "e7cb1b0a925eba754c26292f8fdad0d27062e7b050e695a9c62f1342c0a223a7",;     "certificatePem": "-----BEGIN CERTIFICATE-----\nMIIDWjCCAkKgAwIBAgIVAI2sb8dVk+4HpBU24KkIntcJaxNqMA0GCSqGSIb3DQEB\nCwUAME0xSzBJBgNVBAsMQkFtYXpvbiBXZWIgU2VydmljZXMgTz1BbWF6b24uY29t\nIEluYy4gTD1TZWF0dGxlIFNUPVdhc2hpbmd0b24gQz1VUzAeFw0yMzA4MDEwNTE1\nMThaFw00OTEyMzEyMzU5NTlaMB4xHDAaBgNVBAMME0FXUyBJb1QgQ2VydGlmaWNh\ndGUwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQDKv87IxDfk57gQ28PF\nWP8Y3kiZZy4rbN3DEli1O9C8M4TN5dZpE7xUs9DPeQFTnSggJ+x/rY8wOaIeXQh4\n5lchr37SAvwauaMKL/fHca4ASwMMBebImTKVm969FgoKnbYEb1wuqBbr95Ti/AUa\nyN64IYNCmyLxnj9TVTQvXOnDUb/Bg10TqnXUAw+c6e9iRYZmONZ07ci2X4/XruYk\nnrkNublVo+Qj+1IOaiDW0LN5jSTm/5i3PFvqfAQ5CGDxNZxrmT9JsHm444f7VZps\nTMc0z3k5LjdnTI+Kg2G24ep277uRNECt2AmsDOzZ9KCa1Q4onBLqL0eCAocoWtam\n4PpNAgMBAAGjYDBeMB8GA1UdIwQYMBaAFMIjLDFbWON0ZPLNucRYjjR1hi4zMB0G\nA1UdDgQWBBTEpLpI40cy8XgqzD8wZVLvwKIWFTAMBgNVHRMBAf8EAjAAMA4GA1Ud\nDwEB/wQEAwIHgDANBgkqhkiG9w0BAQsFAAOCAQEAQAbI6ketACkUqHHKanJnXhQJ\nESjYIn7l9JFq+/4MRPO4gOM+KY1Sj/ODYbWDwLWSECz2QLiUfBqni0Jqp1XJs35M\nWb+1rH+q/oLNIRWULH52D7mq8M12cqq8qHM0Nd+f4ljUM6KnhV1N1+X44gOPYIBX\n713clVDiyuN+d/FK37ixQcL8xWiieekn0MhVTcR3Nh7lQy1kV3SGna/BYiZM1Yf/\nxeU6cYOggTPVHJoCSIjllX1ufLOpRF7cPzTT0Z4USk1py64SVWxGR/2rqPW6JL4L\n/ux8PviGkOOFksw2u0MF8u+4Gqm1UCxaZTX2K+l3sZd0TBpoFQcNeflx8rQoYQ==\n-----END CERTIFICATE-----\n",;     "keyPair": {;         "PublicKey": "-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAyr/OyMQ35Oe4ENvDxVj/\nGN5ImWcuK2zdwxJYtTvQvDOEzeXWaRO8VLPQz3kBU50oICfsf62PMDmiHl0IeOZX\nIa9+0gL8GrmjCi/3x3GuAEsDDAXmyJkylZvevRYKCp22BG9cLqgW6/eU4vwFGsje\nuCGDQpsi8Z4/U1U0L1zpw1G/wYNdE6p11AMPnOnvYkWGZjjWdO3Itl+P167mJJ65\nDbm5VaPkI/tSDmog1tCzeY0k5v+Ytzxb6nwEOQhg8TWca5k/SbB5uOOH+1WabEzH\nNM95OS43Z0yPioNhtuHqdu+7kTRArdgJrAzs2fSgmtUOKJwS6i9HggKHKFrWpuD6\nTQIDAQAB\n-----END PUBLIC KEY-----\n",;         "PrivateKey": "-----BEGIN RSA PRIVATE KEY-----\nMIIEowIBAAKCAQEAyr/OyMQ35Oe4ENvDxVj/GN5ImWcuK2zdwxJYtTvQvDOEzeXW\naRO8VLPQz3kBU50oICfsf62PMDmiHl0IeOZXIa9+0gL8GrmjCi/3x3GuAEsDDAXm\nyJkylZvevRYKCp22BG9cLqgW6/eU4vwFGsjeuCGDQpsi8Z4/U1U0L1zpw1G/wYNd\nE6p11AMPnOnvYkWGZjjWdO3Itl+P167mJJ65Dbm5VaPkI/tSDmog1tCzeY0k5v+Y\ntzxb6nwEOQhg8TWca5k/SbB5uOOH+1WabEzHNM95OS43Z0yPioNhtuHqdu+7kTRA\nrdgJrAzs2fSgmtUOKJwS6i9HggKHKFrWpuD6TQIDAQABAoIBABjjdNHmbGoYG9tN\n7vlR1HbMCqNyLBO+mHZy0RrmTdhchqfz198sQgkvzak6VHRcLWnNHNYLizFDUehi\nSUD2HaoP7gR/w0zQjvgYLVV5Wf/FNYmLS+pCDBibertBclgdRhPDS9CaZ73ttYQr\npcDE+bomuwM5IhAA+gsTwYUy5atJLKJwAgwwEcxbqAF4ox0NuEuM4+EsXPH4HVge\n3SYUhlcPILXU6ge83h2ZqsXk/aFkN/EEK2CUKITEzTirW7+uh9sEg8DnZMa3C1Iz\nvModrcZSmdkhd+ES8QEEw/tdmUIRO/2qXgkszP4IgE6IpidTESgUaGR17L/U2Oc5\nrD8wSC0CgYEA9nqE5TovWzx3kZGlyNXVGTS0KTGK29KazVud5qhe89lLslL6soYF\noIB67MMLGz1KRYw07sY2I3Ngvsf6liMD2D3yKhIGw+2Py1eaAtjCdem3cK1ilR0C\n06kXjvG28YCVhLy4if0tyoFsIUM2bDPn7OLv7bi0/g1DS34EKZ7VLE8CgYEA0pTW\n7lhAhZeoX89bzoqhc5zYOZ+o3Tkkd6JXJ50I/jWfxV1tJueIfRETXz2Pc0+U1TI/\nh6V++mqngbo5RzlsG+QysF0EH7Dr3zifFKtb/Vl3C6QpBz2xTw3RnmN9n6bAnMGB\nrHVS9NaCbV2gLPTvuVcPgdw4F7IcWYsCJO/4/KMCgYEA3TGqngSPhzNGoq6wtwGf\nUhWIMQey8/+WyQCVPfCP9gpl8kyhiyDXX+itaFjJWNKyGqPuxPHAmCPtCIlzCtW1\nl5RQBQ1UYPSK/RNKtY9NRIBQDaCsPeFhLg4rhC7L3QNmK08p1TwOohNvtJIa/xO9\n6UrnwtDmLLA+WjtnBOrzp+UCgYBZVfF0vhXpVvSEaPjev6tM295TW+uMpoBVDJcC\n5Dj7d45ncYIr/g/GVycrwXcJCVrvs1iGWGxtGjAj9ff0wmSd1Iq4jU2BkFIQqfm7\nEBN/gKPjWWpaew6spgUmt7iEsX6HQgScQE3INvSwJwcb63GD5G5cvitByjsCtdlc\nCD5OFwKBgAxvCAInnMhGGAFfYwJVWjq3Wfl3FrXTJBEJxtCDqNQiKZ6gHhtshynl\nVrSbDUIbDkYbAUq+a47FBSILSQZg0yGK+ASArQDLnl8haKm6jzcJSHX8rlstBZwV\nJ2GxjX4el9WimLHpN3HHMmPPFx2iO0TnVBaBG926T+Am37UUUhjj\n-----END RSA PRIVATE KEY-----\n";     }
+   40  }
+   41  sudo systemctl status mosquitto.service
+   42  sudo systemctl restart mosquitto
+   43  sudo apt-get purge --remove mosquitto*
+   44  sudo apt-add-repository --remove ppa:mosquitto-dev/mosquitto-ppa
+   45  rm /etc/mosquitto
+   46  rm -d /etc/mosquitto
+   47  rmdir /etc/mosquitto
+   48  sudo rmdir /etc/mosquitto
+   49  sudo apt-add-repository ppa:mosquitto-dev/mosquitto-ppa
+   50  sudo apt-get update
+   51  sudo apt-add-repository ppa:mosquitto-dev/mosquitto-ppa
+   52  sudo apt-get update
+   53  sudo apt-get install mosquitto
+   54  sudo apt-get install mosquitto-clients
+   55  sudo apt install awscli
+   56  sudo apt autoremove
+   57  node-red
+   58  npm audit fix --force
+   59  sudo env PATH=$PATH:/usr/bin /usr/lib/node_modules/pm2/bin/pm2 startup systemd -u ubuntu --hp /home/ubuntu
+   60  sudo shutdown
+   61  cd /etc/mosquitto/certs/
+   62  aws iot attach-principal-policy --policy-name bridgeMQTT --principal arn:aws:iot:us-east-1:336607929163:cert/e7cb1b0a925eba754c26292f8fdad0d27062e7b050e695a9c62f1342c0a223a7
+   63  sudo chmod 644 private.key
+   64  sudo chmod 644 cert.crt
+   65  aws iot describe-endpoint --endpoint-type iot:Data-ATS
+   66  sudo nano /etc/mosquitto/conf.d/bridge.conf
+   67  sudo service mosquitto restart
+   68  mosquitto_pub -h localhost -p 1883 -q 1 -d -t localgateway_to_awsiot  -i localClientID -m "{\"message\": \"helloFromLocalGateway\"}"
+   69  sudo service mosquitto restart
+   70  sudo systemctl status mosquitto.service
+   71  mosquitto_pub -h localhost -p 1883 -q 1 -d -t localgateway_to_awsiot  -i localClientID -m "{\"message\": \"helloFromLocalGateway\"}"
+   72  mosquitto_pub -h localhost -p 1883 -q 1 -d -t both_directions -i yourClientID -m "{\"message\": \"helloFromLocalGateway\"}"
+   73  sudo systemctl status mosquitto.service
+   74  mosquitto_pub -h localhost -p 1883 -q 1 -d -t localgateway_to_awsiot  -i localClientID -m "{\"message\": \"helloFromLocalGateway\"}"
+   75  sudo service mosquitto restart
+   76  mosquitto_pub -h localhost -p 1883 -q 1 -d -t localgateway_to_awsiot  -i localClientID -m "{\"message\": \"helloFromLocalGateway\"}"
+   77  sudo apt-get update
+   78  aws-configure
+   79  aws configure
+   80  aws iam list-users
+   81  aws configure
+   82  Default output format [None]:
+   83  aws iam delete-access-key --access-key-id [None] --user-name [None]
+   84  aws iam delete-access-key --access-key-id [none] --user-name [None]
+   85  aws configure
+   86  aws iam delete-access-key --access-key-id 1 --user-name 1
+   87  aws-configure
+   88  aws configure
+   89  aws iam delete-access-key --access-key-id 123456789 --user-name 123456789
+   90  aws configure
+   91  aws iam delete-access-key --access-key-id --user-name 
+   92  aws iam delete-access-key  --access-key-id  --user-name  
+   93  aws configure get aws_access_key_id
+   94  aws configure set aws_access_key_id default_access_key
+   95  aws configure set aws_secret_access_key default_secret_key
+   96  aws configure
+   97  ~/.aws/credentials
+   98  sudo ~/.aws/credentials
+   99  cd ~/.aws/credentials
+  100  ls
+  101  aws configure get help
+  102  aws  configure  get  aws_access_key_id
+  103  mosquitto_pub -h localhost -p 1883 -q 1 -d -t localgateway_to_awsiot  -i localClientID -m "{\"message\": \"helloFromLocalGateway\"}"
+  104  mosquitto_pub -m "Message from client" -t "test"
+  105  GET /mqtt HTTP/1.1
+  106  cd /etc/mosquitto
+  107  ls
+  108  nano password
+  109  mosquitto -v
+  110  mosquitto_pub -h localhost -t testTopic -m "Hello, world!" -u rumesh -P rumesh@SLT
+  111  mosquitto_pub -h localhost -p 1883 -q 1 -d -t localgateway_to_awsiot  -i localClientID -m "{\"message\": \"helloFromLocalGateway\"}"
+  112  mosquitto_pub -h localhost -p 1883 -q 1 -d -t localgateway_to_awsiot  -i localClientID -m "{\"message\": \"helloFromLocalGateway\"}" -u rumesh -P rumesh@SLT
+  113  mosquitto_pub -h localhost -p 1883 -q 1 -d -t localgateway_to_awsiot  -i localClientID -m "{\"message\": \"Rumesh\"}" -u rumesh -P rumesh@SLT
+  114  mosquitto -v
+  115  history
+  116  sudo nano /etc/mosquitto/mosquitto.conf
+  117  sudo systemctl restart mosquitto
+  118  mosquitto -v
+  119  sudo systemctl restart mosquitto
+  120  systemctl status mosquitto.service
+  121  sudo systemctl restart mosquitto
+  122  mosquitto_pub -h localhost -p 1883 -q 1 -d -t localgateway_to_awsiot  -i localClientID -m "{\"message\": \"Rumesh\"}" -u rumesh -P rumesh@SLT
+  123  sudo service mosquitto restart
+  124  sudo apt-get update
+  125  sudo nano /etc/mosquitto/conf.d/bridge.conf
+  126  sudo service mosquitto restart
+  127  mosquitto_sub -h 127.0.0.1 -t topic
+  128  mosquitto_sub -h 127.0.0.1 -t topic -u rumesh -P rumesh@SLT
+  129  mosquitto_pub -h 127.0.0.1 -t topic -m "Hello"
+  130  mosquitto_pub -h 127.0.0.1 -t topic -m "Hello" -u rumesh -P rumesh@SLT
+  131  systemctl status mosquitto.service
+  132  sudo service mosquitto restart
+  133  mosquitto_pub -h localhost -p 1883 -q 1 -d -t localgateway_to_awsiot  -i localClientID -m "{\"message\": \"Rumesh\"}" -u rumesh -P rumesh@SLT
+  134  sudo nano /etc/mosquitto/conf.d/bridge.conf
+  135  sudo nano /etc/mosquitto/mosquitto.conf
+  136  sudo service mosquitto restart
+  137  sudo apt-get purge --remove mosquitto*
+  138  sudo apt autoremove
+  139  sudo apt-get purge --remove mosquitto*
+  140  sudo apt-add-repository --remove ppa:mosquitto-dev/mosquitto-ppa
+  141  cd /etc
+  142  ls
+  143  rmdir mosquitto
+  144  sudo rmdir mosquitto
+  145  sudo rm -rf mosquitto
+  146  ls
+  147  cd mcd ..
+  148  cd ..
+  149  clear
+  150  sudo service mosquitto restart
+  151  clear
+  152  sudo apt-add-repository ppa:mosquitto-dev/mosquitto-ppa
+  153  sudo apt-get update
+  154  sudo apt-get install mosquitto
+  155  sudo apt-get install mosquitto-clients
+  156  sudo apt install awscli
+  157  aws configure
+  158  aws iot create-policy --policy-name bridgeMQTT --policy-document '{"Version": "2012-10-17","Statement": [{"Effect": "Allow","Action": "iot:*","Resource": "*"}]}'
+  159  cd .aws
+  160  ..
+  161  cd root
+  162  sudo cd root
+  163  sudo rm ~/.aws/credentials
+  164  aws iot create-policy --policy-name bridgeMQTT --policy-document '{"Version": "2012-10-17","Statement": [{"Effect": "Allow","Action": "iot:*","Resource": "*"}]}'
+  165  sudo rm ~/.aws/credentials
+  166  aws configure
+  167  aws iot create-policy --policy-name bridgeMQTT --policy-document '{"Version": "2012-10-17","Statement": [{"Effect": "Allow","Action": "iot:*","Resource": "*"}]}'
+  168  aws iot delete-policy --policy-name bridgeMQTT
+  169  sudo aws iot delete-policy --policy-name bridgeMQTT
+  170  aws iot delete-policy --policy-name bridgeMQTT
+  171  aws iot detach-policy --policy-name bridgeMQTT
+  172  detach policy-name
+  173  aws iot detach-policy     --target "arn:aws:iot:us-east-1:336607929163:cert/e7cb1b0a925eba754c26292f8fdad0d27062e7b050e695a9c62f1342c0a223a7"     --policy-name "bridgeMQTT"
+  174  aws iot detach-policy --target "arn:aws:iot:us-east-1:336607929163:cert/e7cb1b0a925eba754c26292f8fdad0d27062e7b050e695a9c62f1342c0a223a7"     --policy-name "bridgeMQTT"
+  175  detach policy-name
+  176  aws iot detach-policy     --target "arn:aws:iot:us-east-1:336607929163:cert/e7cb1b0a925eba754c26292f8fdad0d27062e7b050e695a9c62f1342c0a223a7"     --policy-name "bridgeMQTT"
+  177  aws iot detach-policy --target "arn:aws:iot:us-east-1:336607929163:cert/e7cb1b0a925eba754c26292f8fdad0d27062e7b050e695a9c62f1342c0a223a7"  --policy-name "bridgeMQTT"
+  178  aws iot detach-policy \
+  179  aws iot detach-policy --target arn:aws:iot:us-east-1:336607929163:cert/e7cb1b0a925eba754c26292f8fdad0d27062e7b050e695a9c62f1342c0a223a7 --policy-name bridgeMQTT
+  180  aws iot delete-policy --policy-name bridgeMQTT
+  181  aws configure
+  182  aws iot detach-policy --target arn:aws:iot:us-east-1:336607929163:cert/e7cb1b0a925eba754c26292f8fdad0d27062e7b050e695a9c62f1342c0a223a7 --policy-name bridgeMQTT
+  183  aws configure
+  184  aws iot detach-policy --target arn:aws:iot:us-east-1:336607929163:cert/e7cb1b0a925eba754c26292f8fdad0d27062e7b050e695a9c62f1342c0a223a7 --policy-name bridgeMQTT
+  185  aws iot delete-policy --policy-name bridgeMQTT
+  186  aws iot create-policy --policy-name bridgeMQTT --policy-document '{"Version": "2012-10-17","Statement": [{"Effect": "Allow","Action": "iot:*","Resource": "*"}]}'
+  187  cd /etc/mosquitto/certs/
+  188  cd /etc/mosquitto/certs/
+  189  sudo wget https://www.amazontrust.com/repository/AmazonRootCA1.pem -O rootCA.pem
+  190  sudo aws iot create-keys-and-certificate --set-as-active --certificate-pem-outfile cert.crt --private-key-outfile private.key --public-key-outfile public.key --region us-east-1
+  191  aws iot attach-principal-policy --policy-name bridgeMQTT --principal arn:aws:iot:us-east-1:336607929163:cert/e7cb1b0a925eba754c26292f8fdad0d27062e7b050e695a9c62f1342c0a223a7
+  192  sudo chmod 644 private.key
+  193  sudo chmod 644 cert.crt
+  194  aws iot describe-endpoint --endpoint-type iot:Data-ATS
+  195  sudo nano /etc/mosquitto/conf.d/bridge.conf
+  196  sudo service mosquitto restart
+  197  mosquitto_pub -h localhost -p 1883 -q 1 -d -t localgateway_to_awsiot  -i localClientID -m "{\"message\": \"helloFromLocalGateway\"}"
+  198  sudo service mosquitto restart
+  199  systemctl status mosquitto.service
+  200  mosquitto_pub -h localhost -p 1883 -q 1 -d -t localgateway_to_awsiot  -i localClientID -m "{\"message\": \"helloFromLocalGateway\"}"
+  201  mosquitto_pub -h localhost -p 1883 -q 1 -d -t localgateway_to_awsiot  -i localClientID -m "{\"message\": \"helloFromLocalGateway\"}" -u rumesh -P rumesh@SLT
+  202  mosquitto_pub -h localhost -p 1883 -q 1 -d -t localgateway_to_awsiot  -i localClientID -m "{\"message\": \"helloFromLocalGateway\"}"
+  203  mosquitto_pub -h localhost -t testTopic -m "Hello, world!" -u rumesh -P rumesh@SLT
+  204  mosquitto_pub -h localhost -t testTopic -m "opoHello, world!" -u rumesh -P rumesh@SLT
+  205  mosquitto_pub -h localhost -t testTopic -m "Hello, world!" -u rumesh -P rumesh@SLT
+  206  mosquitto_pub -h localhost -p 1883 -q 1 -d -t localgateway_to_awsiot  -i localClientID -m "{\"message\": \"helloFromLocalGateway\"}"
+  207  systemctl status mosquitto.service
+  208  mosquitto_pub -h localhost -p 1883 -q 1 -d -t localgateway_to_awsiot  -i localClientID -m "{\"message\": \"Rumesh\"}" -u rumesh -P rumesh@SLT
+  209  mosquitto_pub -h aws:iot:us-east-1:336607929163:cert/e7cb1b0a925eba754c26292f8fdad0d27062e7b050e695a9c62f1342c0a223a7 -p 8883 --key /etc/mosquitto/certs/private.key --cert /etc/mosquitto/certs/cert.crt --cafile /etc/mosquitto/certs/rootCA.pem -t mytopic -m '{"hello" : "test"}' -i myclientid -d
+  210  mosquitto_pub -h localhost -p 1883 -q 1 -d -t localgateway_to_awsiot  -i localClientID -m "{\"message\": \"Rumesh\"}" -u rumesh -P rumesh@SLT
+  211  mosquitto_pub -h localhost -p 1883 -q 1 -d -t localgateway_to_awsiot  -i localClientID -m "{\"message\": \"helloFromLocalGateway\"}" -u rumesh -P rumesh@SLT
+  212  mosquitto_pub -h localhost -p 1883 -q 1 -d -t localgateway_to_awsiot  -i localClientID -m "{\"message\": \"helloFromLocalGateway\"}"
+  213  mosquitto_pub -h a1tem1a5tf88ef-ats.iot.us-east-1.amazonaws.com -p 8883 --key /etc/mosquitto/certs/private.key --cert /etc/mosquitto/certs/cert.crt --cafile /etc/mosquitto/certs/rootCA.pem -t mytopic -m '{"hello" : "test"}' -i myclientid -d
+  214  clear
+  215  aws iot describe-endpoint --endpoint-type iot:Data-ATS
+  216  sudo nano /etc/mosquitto/conf.d/bridge.conf
+  217  sudo service mosquitto restart
+  218  mosquitto_pub -h localhost -p 1883 -q 1 -d -t localgateway_to_awsiot  -i localClientID -m "{\"message\": \"helloFromLocalGateway\"}"
+  219  mosquitto_pub -h localhost -p 1883 -q 1 -d -t localgateway_to_awsiot  -i localClientID -m "{\"message\": \"helloFromLocalGateway\"}" -u rumesh -P rumesh@SLT
+  220  cd ..
+  221  ls
+  222  nano mosquitto.conf
+  223  mosquitto_pub -h localhost -p 1883 -q 1 -d -t localgateway_to_awsiot  -i localClientID -m "{\"message\": \"Rumesh\"}" -u rumesh -P rumesh@SLT
+  224  mosquitto -V
+  225  mosquitto -v
+  226  sudo nano /etc/mosquitto/mosquitto.conf
+  227  mosquitto_pub -h localhost -p 1883 -q 1 -d -t localgateway_to_awsiot  -i localClientID -m "{\"message\": \"Rumesh\"}" 
+  228  sudo mosquitto_passwd -c /etc/mosquitto/passwd rumesh
+  229  sudo nano /etc/mosquitto/mosquitto.conf
+  230  sudo systemctl restart mosquitto
+  231  mosquitto_pub -h localhost -p 1883 -q 1 -d -t localgateway_to_awsiot  -i localClientID -m "{\"message\": \"Rumesh\"}" -u rumesh -P rumesh@SLT
+  232  mosquitto_sub -d -t testTopic -u rumesh -P rumesh@SLT
+  233  mosquitto_sub -d -t localgateway_to_awsiot
+  234  mosquitto_sub -d -t localgateway_to_awsiot -u rumesh -P rumesh@SLT
+  235  clear
+  236  sudo nano /etc/mosquitto/mosquitto.conf
+  237  mosquitto_pub -h localhost -p 1883 -q 1 -d -t localgateway_to_awsiot  -i localClientID -m "{\"message\": \"helloFromLocalGateway\"}"
+  238  mosquitto_pub -h localhost -p 1883 -q 1 -d -t localgateway_to_awsiot  -i localClientID -m "{\"message\": \"helloFromLocalGateway\"}" -u rumesh -P rumesh@SLT
+  239  mosquitto_pub -h localhost -t testTopic -m "Hello, world!" -u rumesh -P rumesh@SLT
+  240  mosquitto_pub -h localhost -t testTopic -m "Hello, world!"
+  241  mosquitto_pub -h localhost -t testTopic -m "Hello, world!" -u rumesh -P rumesh@SLT
+  242  mosquitto_pub -h localhost -p 1883 -q 1 -d -t localgateway_to_awsiot  -i localClientID -m "{\"message\": \"Rumesh\"}" -u rumesh -P rumesh@SLT
+  243  mosquitto_pub -h localhost -p 1883 -q 1 -d -t localgateway_to_awsiot  -i localClientID -m "{\"message\": \"Rumessadh\"}" -u rumesh -P rumesh@SLT
+  244  clear
+  245  mosquitto_pub -h localhost -p 1883 -q 1 -d -t localgateway_to_awsiot  -i localClientID -m "{\"message\": \"helloFromLocalGateway\"}"
+  246  -u rumesh -P rumesh@SLT
+  247  mosquitto_pub -h localhost -p 1883 -q 1 -d -t localgateway_to_awsiot  -i localClientID -m "{\"message\": \"helloFromLocalGateway\"}" -u rumesh -P rumesh@SLT
+  248  sudo apt-get update
+  249  sudo nano /etc/mosquitto/conf.d/bridge.conf
+  250  sudo service mosquitto restart
+  251  mosquitto_pub -h localhost -p 1883 -q 1 -d -t localgateway_to_awsiot  -i localClientID -m "{\"message\": \"helloFromLocalGateway\"}"
+  252  mosquitto_pub -h localhost -p 1883 -q 1 -d -t localgateway_to_awsiot  -i localClientID -m "{\"message\": \"helloFromLocalGateway\"}" -u rumesh -P rumesh@SLT
+  253  mosquitto_pub -h localhost -p 1883 -q 1 -d -t both_directions -i yourClientID -m "{\"message\": \"helloFromLocalGateway\"}"
+  254  mosquitto_pub -h localhost -p 1883 -q 1 -d -t both_directions -i yourClientID -m "{\"message\": \"helloFromLocalGateway\"}" -u rumesh -P rumesh@SLT
+  255  sudo apt-add-repository ppa:mosquitto-dev/mosquitto-ppa
+  256  sudo apt-get update
+  257  sudo apt-get install mosquitto
+  258  sudo apt-get install mosquitto-clients
+  259  sudo apt install awscli
+  260  aws configure
+  261  aws iot create-policy --policy-name bridgeMQTT --policy-document '{"Version": "2012-10-17","Statement": [{"Effect": "Allow","Action": "iot:*","Resource": "*"}]}'
+  262  aws configure
+  263  aws iot create-policy --policy-name bridgeMQTT --policy-document '{"Version": "2012-10-17","Statement": [{"Effect": "Allow","Action": "iot:*","Resource": "*"}]}'
+  264  cd /etc/mosquitto/certs/
+  265  sudo wget https://www.amazontrust.com/repository/AmazonRootCA1.pem -O rootCA.pem
+  266  sudo aws iot create-keys-and-certificate --set-as-active --certificate-pem-outfile cert.crt --private-key-outfile private.key --public-key-outfile public.key --region us-east-1
+  267  aws iot attach-principal-policy --policy-name bridgeMQTT --principal <certificate ARN>
+  268  sudo wget https://www.amazontrust.com/repository/AmazonRootCA1.pem -O rootCA.pem
+  269  sudo aws iot create-keys-and-certificate --set-as-active --certificate-pem-outfile cert.crt --private-key-outfile private.key --public-key-outfile public.key --region us-east-1
+  270  aws configure
+  271  aws iot attach-principal-policy --policy-name bridgeMQTT --principal <certificate ARN>
+  272  sudo chmod 644 private.key
+  273  sudo chmod 644 cert.crt
+  274  aws iot describe-endpoint --endpoint-type iot:Data-ATS
+  275  sudo aws configure
+  276  aws iot create-policy --policy-name bridgeMQTT --policy-document '{"Version": "2012-10-17","Statement": [{"Effect": "Allow","Action": "iot:*","Resource": "*"}]}'
+  277  cd ..\
+  278  cd ..
+  279  cd root/.aws
+  280  sudo cd root/.aws
+  281  sudo rm root/.aws/credentials
+  282  history
+  283  aws configure list
+  284  aws configure
+  285  aws iot create-policy --policy-name bridgeMQTT --policy-document '{"Version": "2012-10-17","Statement": [{"Effect": "Allow","Action": "iot:*","Resource": "*"}]}'
+  286  aws iot describe-endpoint --endpoint-type iot:Data-ATS
+  287  mosquitto_pub -h localhost -p 1883 -q 1 -d -t localgateway_to_awsiot  -i localClientID -m "{\"message\": \"Rumesh\"}" -u rumesh -P rumesh@SLT
+  288  mosquitto_pub -h localhost -p 1883 -q 1 -d -t localgateway_to_awsiot  -i localClientID -m "{\"message\": \"Rumesh\"}"
+  289  mosquitto_sub -d -t localgateway_to_awsiot -u rumesh -P rumesh@SLTmosquitto_sub -d -t esp/temperature -u rumesh -P rumesh@SLT
+  290  mosquitto_sub -d -t esp/temperature -u rumesh -P rumesh@SLT
+  291  mosquitto_sub -d -t topic -u rumesh -P rumesh@SLT
+  292  mosquitto -v
+  293  mosquitto_pub -h localhost -p 1883 -q 1 -d -t localgateway_to_awsiot  -i localClientID -m "{\"message\": \"Rumesh\"}" -u rumesh -P rumesh@SLT
+  294  mosquitto_pub -h localhost -p 1883 -q 1 -d -t localgateway_to_awsiot  -i localClientID -m "{\"message\": \"senith\"}" -u rumesh -P rumesh@SLT
+  295  mosquitto -V
+  296  mosquitto -v
+  297  ls
+  298  sudo apt update
+  299  sudo apt install mysql-server
+  300  sudo systemctl status mysql
+  301  sudo mysql
+  302  wget https://sourceforge.net/projects/xampp/files/XAMPP%20Linux/8.2.4/xampp-linux-x64-8.2.4-0-installer.run
+  303  chmod +x xampp-linux-x64-8.2.4-0-installer.run
+  304  ll
+  305  ./xampp-linux-x64-8.2.4-0-installer.run 
+  306  su
+  307  sudo su -
+  308  su sudo u -
+  309  sudo su -
+  310  clear
+  311  ls
+  312  clear
+  313  history
+  314  cat ~/.bash_history
+  315  history > aws-history.txt
